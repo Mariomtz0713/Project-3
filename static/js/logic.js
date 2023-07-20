@@ -1,11 +1,9 @@
-url = 'https://api.travelpayouts.com/v1/prices/calendar?currency=usd&depart_date=2016-11&origin=MOW&destination=BCN&calendar_type=departure_date&token=' + API_KEY
 
-d3.json('calendar.json').then((webData) => {
+d3.json('Resources/data.json').then((webData) => {
 
     console.log(webData);
-    console.log(webData.data);
-    
-
+    console.log(webData.data['2023-07-20']);
+    console.log(webData.data)
 
     
 });
