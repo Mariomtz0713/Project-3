@@ -1,9 +1,10 @@
 
 d3.json('Resources/data.json').then((webData) => {
 
-    console.log(webData);
-    console.log(webData.data['2023-07-20']);
-    console.log(webData.data)
+    console.log(webData); // Whole set
+    console.log(webData.data); // Only data dictionary 
+    console.log(webData.data['2023-07-20']); // First day in dataset
+
 
     
 });
