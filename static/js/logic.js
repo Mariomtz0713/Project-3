@@ -11,6 +11,7 @@ d3.json('Resources/data.json').then((webData) => {
 
 
 
+
 // bar chart - popular airline routes
 // line graph - tickets each day of the month, drop down menu for airlines
 // bubble chart on map?- destinations, bigger the bubble show popularity
