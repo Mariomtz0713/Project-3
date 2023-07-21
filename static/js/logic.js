@@ -1,10 +1,7 @@
 
-d3.json('Resources/data.json').then((webData) => {
+d3.json('Resources/clean_data.json').then((webData) => {
 
     console.log(webData); // Whole set
-    console.log(webData.data); // Only data dictionary 
-    console.log(webData.data['2023-07-20']); // First day in dataset
-
 
     
 });
