@@ -1,7 +1,8 @@
 
-d3.json('Resources/clean_data.json').then((webData) => {
+d3.json('Resources/DataFiles/final_data.json').then((webData) => {
 
     console.log(webData); // Whole set
+
 
     
 });
