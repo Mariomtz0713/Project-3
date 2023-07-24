@@ -10,26 +10,24 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap);
 
 // Executing json data
-d3.json('Resources/DataFiles/final_data.json').then((data) => {
+d3.json('Resources/DataFiles/clean_data.json').then((data) => {
 
-    console.log(data); 
+    console.log(data);
    
-    for (let i = 0; i < Object.keys(data.coordinates).length; i++) {
-                        // Since coordinates section is an object 
-                        // not an array, must use this method for .length
-
-        let latitude = data.coordinates[i][0];
-        let longtitude = data.coordinates[i][1];
+    for (let i = 0; i < data.length; i++) {
+    
+        let latitude = data[i].coordinates[0];
+        let longtitude = data[i].coordinates[1];
 
         // Displaying marker
         let marker = L.marker([latitude, longtitude]).addTo(myMap);
 
         // Displaying marker information
         marker.bindPopup(
-        `City: ${data.city[i]} <br>
-        Airline: ${data.airline_name[i]} <br>
-        Price (USD): $${data.price[i]} <br>
-        Number of layovers: ${data.transfers[i]}`
+        `City: ${data[i].city} <br>
+        Airline: ${data[i].airline_name} <br>
+        Price (USD): $${data[i].price} <br>
+        Number of layovers: ${data[i].transfers}`
         ).addTo(myMap);
 
         
