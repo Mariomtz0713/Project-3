@@ -1,7 +1,7 @@
 // Creating Map
 let myMap = L.map('map', {
     center: [38.7339, -27.0647],
-    zoom: 2.5
+    zoom: 2
 });
 
 // Adding tile layer
@@ -9,8 +9,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
-// Executing json data
-d3.json('Resources/DataFiles/clean_data.json').then((data) => {
+// fetching data from python flask
+fetch('http://127.0.0.1:5000/flights')
+    .then((response) => response.json()) // Have to get past CORS to get response as json data
+    .then((data) => {
 
     console.log(data);
    
@@ -40,7 +42,7 @@ d3.json('Resources/DataFiles/clean_data.json').then((data) => {
 
 
 
-// bar chart - popular airline routes
+// bar chart - popular airline routes where x axis is name of airlines, y axis is how times that airline shows up
 // line graph - tickets each day of the month, drop down menu for airlines
 // bubble chart on map?- destinations, bigger the bubble show popularity
     // Create df only using city counter?
