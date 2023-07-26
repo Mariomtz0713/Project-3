@@ -10,26 +10,28 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap);
 
 // fetching data from python flask
-fetch('http://127.0.0.1:5000/flights')
+fetch('http://127.0.0.1:5000/dataset')
     .then((response) => response.json()) // Have to get past CORS to get response as json data
     .then((data) => {
 
     console.log(data);
+
+    query = data[0].metadata
    
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < query.length; i++) {
     
-        let latitude = data[i].coordinates[0];
-        let longtitude = data[i].coordinates[1];
+        let latitude = query[i].coordinates[0];
+        let longtitude = query[i].coordinates[1];
 
         // Displaying marker
         let marker = L.marker([latitude, longtitude]).addTo(myMap);
 
         // Displaying marker information
         marker.bindPopup(
-        `City: ${data[i].city} <br>
-        Airline: ${data[i].airline_name} <br>
-        Price (USD): $${data[i].price} <br>
-        Number of layovers: ${data[i].transfers}`
+        `City: ${query[i].city} <br> 
+        Airline: ${query[i].airline_name} <br>
+        Price (USD): $${query[i].price} <br>
+        Number of layovers: ${query[i].transfers}`
         ).addTo(myMap);
 
         

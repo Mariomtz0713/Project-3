@@ -20,10 +20,10 @@ flight_data = db.flights
 def home():
     return (
         f'Welcome! Here are the avaliable routes: <br>'
-        f'/flights'
+        f'/dataset'
     )
 
-@app.route('/flights')
+@app.route('/dataset')
 def flights():
     # Pulling all data in database except id due to object error
     flight_documents = list(flight_data.find({}, {'_id': False}))
