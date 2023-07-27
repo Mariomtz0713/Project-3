@@ -28,10 +28,8 @@ fetch('http://127.0.0.1:5000/dataset')
 
         // Displaying marker information
         marker.bindPopup(
-        `City: ${query[i].city} <br> 
-        Airline: ${query[i].airline_name} <br>
-        Price (USD): $${query[i].price} <br>
-        Number of layovers: ${query[i].transfers}`
+        `City: ${query[i].city} <br>
+        Airport: ${query[i].destination}`
         ).addTo(myMap);
 
         

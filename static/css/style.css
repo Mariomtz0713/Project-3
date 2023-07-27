@@ -22,3 +22,7 @@ body {
 #bar {
     height: 150%;
 }
+
+.white-text {
+    color: white;
+}

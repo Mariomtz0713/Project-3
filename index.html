@@ -28,13 +28,11 @@
 <body>
 
   <header class="navbar navbar-expand sticky-top bg-primary navbar-dark flex-column flex-md-row bd-navbar">
-    <a class="navbar-brand mr-0 mr-md-2" href="#">NOW BOARDING</a>
+    <a class="navbar-brand mr-0 mr-md-2" style="color: white;">NOW BOARDING <i class="fa fa-plane fa-1x fa-fw"></i></a>
 
     <div class="navbar-nav-scroll">
       <ul class="navbar-nav bd-navbar-nav flex-row">
-        <li class="nav-item px-2">Home
-        </li>
-        <li class="nav-item px-2">Documentation
+        <li class="nav-item px-2" style="color: white;"> San Antonio flights
         </li>
       </ul>
     </div>
@@ -51,29 +49,29 @@
           margin-top: 1rem; 
           background-color: #eee; 
           color: #7d7a7a; ">
-            Pilots
+            Travel around the World!
           </h6>
 
           <ul class="nav flex-column">
 
             <li class="nav-item">
               <a class="nav-link" >
-                 Mario
+                 Popular Destinations
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link">
-                 Diana
+                 Las Vegas
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link">
-                 Isaac
+                 New York
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link">
-                 Joe
+                 My House
               </a>
             </li>
             
@@ -86,28 +84,22 @@
       <main class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4">
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-          <h1 class="h2"><i class="fa fa-tachometer"></i> Meet Your Pilots</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-              <button class="btn btn-sm btn-primary">Share</button>
-              <button class="btn btn-sm btn-primary">Export</button>
-            </div>
-            <button class="btn btn-sm btn-primary dropdown-toggle">
-              <i class="fa fa-calendar"></i>
-              This week
-            </button>
-          </div>
+          <h1 class="h2"><i class="fa fa-address-card"></i> Meet Your Pilots</h1>
         </div>
 
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-12 pr-0 mb-3">
             <div class="card text-white bg-primary">
-              <div class="card-header"><i class="fa fa-shopping-bag"></i> Mario M.</div>
+              <div class="card-header"><i class="fa fa-cog fa-spin"></i> Mario Martinez</div>
               <div class="card-body">
-                <h3 class="card-title">150</h3>
+                <h6 class="card-title">
+                  -From San Antonio born and raised! <br> 
+                  -Enjoys anything and everything to do with Mario <br>
+                  -Received B.S. in Mathematics from Texas State University c/o 22'
+                </h6>
               </div>
-              <a class="card-footer text-right" href="#">
-                More info <i class="fa fa-arrow-circle-right"></i>
+              <a style="color: white;" class="card-footer text-right" target="_blank" href="https://www.linkedin.com/in/mario-martinez-2b461626a">
+                <i class="fa fa-linkedin-square"></i>  LinkedIn Profile 
               </a>
             </div>
           </div>
@@ -117,8 +109,8 @@
               <div class="card-body">
                 <h3 class="card-title">53%</h3>
               </div>
-              <a class="card-footer text-right" href="#">
-                More info <i class="fa fa-arrow-circle-right"></i>
+              <a style="color: white;" class="card-footer text-right" target="_blank" href="https://www.linkedin.com/in/isaac-campos-925594186">
+                <i class="fa fa-linkedin-square"></i> LinkedIn Profile 
               </a>
             </div>
           </div>
@@ -128,8 +120,8 @@
               <div class="card-body">
                 <h3 class="card-title">44</h3>
               </div>
-              <a class="card-footer text-right" href="#">
-                More info <i class="fa fa-arrow-circle-right"></i>
+              <a style="color: white;" class="card-footer text-right" target="_blank" href="">
+                <i class="fa fa-linkedin-square"></i> LinkedIn Profile 
               </a>
             </div>
           </div>
@@ -139,8 +131,8 @@
               <div class="card-body">
                 <h3 class="card-title">65</h3>
               </div>
-              <a class="card-footer text-right" href="#">
-                More info <i class="fa fa-arrow-circle-right"></i>
+              <a style="color: white;" class="card-footer text-right" target="_blank" href="">
+                <i class="fa fa-linkedin-square"></i> LinkedIn Profile
               </a>
             </div>
           </div>
@@ -150,7 +142,7 @@
           <div class="col-lg-6 col-md-6 col-sm-12 pr-0 mb-3">
             <div class="card-collapsible card">
               <div class="card-header">
-                Map
+                <i class="fa fa-globe"></i> Map 
               </div>
               <div id="map">
                   <canvas class="chart w-100" width="100%" height="90%"></canvas>
@@ -160,9 +152,9 @@
           <div class="col-lg-6 col-md-6 col-sm-12 pr-0 mb-3">
             <div class="card-collapsible card">
               <div class="card-header">
-                Bar Chart
+                <i class="fa fa-circle-o-notch" ></i> Bubble Chart 
               </div>
-              <div id="bar">
+              <div id="bubble">
               </div>
             </div>
           </div>
@@ -172,16 +164,17 @@
           <div class="col-lg-6 col-md-6 col-sm-12 pr-0 mb-3">
             <div class="card-collapsible card">
               <div class="card-header">
-                Bubble Chart
+                <i class="fa fa-bar-chart"></i> Bar Chart
+                <select id="selDataset" class="pull-right" onchange="optionChanged(this.value)"></select>
               </div>
-              <div id="bubble">
+              <div id="bar">
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 pr-0 mb-3">
             <div class="card-collapsible card">
               <div class="card-header">
-                Destination Info
+                <i class="fa fa-info"></i> Destination Info
               </div>
                 <div id="sample-metadata" style="padding: 5%;" ></div>
               </div>

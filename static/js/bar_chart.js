@@ -1,4 +1,4 @@
-
+// Initial page load
  function init() {
     fetch('http://127.0.0.1:5000/dataset')
     .then((response) => response.json()) // Have to get past CORS to get response as json data
@@ -6,10 +6,10 @@
     
     //Drop down menu
     let city = data[0].cities;
-    // city.forEach((name) => {d3.select('#selDataset').append('option').text(name)});
+    city.forEach((name) => {d3.select('#selDataset').append('option').text(name)});
  
     // create initial charts
-     charts(city[35])
+     charts(city[0])
 
     })
 
@@ -22,21 +22,15 @@ function charts(searchCity) {
     .then((data) => {
 
     let searchData = data[0].metadata.filter(place => place.city == searchCity);
-    console.log(searchData)
-    
-    // Need box info to include average price, total flights available, destination city, average number of transfers and drop down menu
-    let boxInfo = d3.select('#sample-metadata').html("");
-    for (key in searchData[0]) {
-        boxInfo.append('h5').text(`${key}: ${searchData[0][key]}`)
-    };
+
 
     // Creating list of only airline names of selected city
-    let airlineList = []
+    let airlineList = [];
     for (let i = 0; i < searchData.length; i++) {
         airlineList.push(searchData[i].airline_name)
-    }
+    };
     // Counting how many times each airline is in list
-    let airlineCounter = {}
+    let airlineCounter = {};
     airlineList.forEach(airline => {
         if (airlineCounter[airline]) {
             airlineCounter[airline] += 1
@@ -46,15 +40,50 @@ function charts(searchCity) {
         }
     });
     // Data Values for bar chart
-    let airlineNames = Object.keys(airlineCounter);
-    let airlineAmounts = Object.values(airlineCounter);
+    let airlineName = Object.keys(airlineCounter);
+    let airlineAmount = Object.values(airlineCounter);
+
+    let filghtSum = 0;
+    for (let i = 0; i < airlineAmount.length; i++) {
+        filghtSum += airlineAmount[i]
+    }
+
+    let averagePrice = 0;
+    for (let i = 0; i < searchData.length; i++) {
+        averagePrice += searchData[i].price
+    }
+    averagePrice /= searchData.length;
+    averagePrice = averagePrice.toFixed(2);
+
+    let averageTransfer = 0;
+    for (let i = 0; i < searchData.length; i++) {
+        averageTransfer += searchData[i].transfers
+    };
+    averageTransfer /= searchData.length
+    averageTransfer = averageTransfer.toFixed(2)
+
+    let cleanBoxData = {
+        'City': searchData[0].city,
+        'Coordinates': searchData[0].coordinates,
+        'Average price': `$${averagePrice}`,
+        'Currency':  searchData[0].currency,
+        'Airlines available': airlineName,
+        'Total flights available': filghtSum,
+        'Average number of layovers': averageTransfer
+    };
+    
+    // Destination info box
+    let boxInfo = d3.select('#sample-metadata').html("");
+    for (key in cleanBoxData) {
+        boxInfo.append('h5').text(`${key}: ${cleanBoxData[key]}`)
+    };
 
 
     // Creating list of all destinations
     allDestinations = [];
     for (let i = 0; i < data[0].metadata.length; i++) {
         allDestinations.push(data[0].metadata[i].destination);
-    }
+    };
     // Counting each destination
     let destinationCounter = {};
     allDestinations.forEach(destination => {
@@ -67,18 +96,19 @@ function charts(searchCity) {
     });
     // Data values for bubble chart
     let destinationNames = Object.keys(destinationCounter);
-    let destinationValues = Object.values(destinationCounter)
+    let destinationValues = Object.values(destinationCounter);
     
-    let numbers = []
+    let numbers = [];
     for (let i = 0; i < 63; i++) {
         numbers.push(i)
-    }
+    };
 
 
     // Creating Bar Chart
     let barChart = [{
-        x: airlineNames,
-        y: airlineAmounts,
+        x: airlineName,
+        y: airlineAmount,
+        text: Object.keys(airlineCounter),
         type: 'bar',
         orientation: 'v'
     }];
@@ -88,7 +118,7 @@ function charts(searchCity) {
         title: 'Flight Availability by Location',
         xaxis: {title: 'Airline'},
         yaxis: {title: 'Number of flights'},
-    }
+    };
     Plotly.newPlot('bar', barChart, bar_layout);
 
      // Creating Bubble Chart
@@ -110,7 +140,7 @@ function charts(searchCity) {
             title: 'Destinations'
         }
     };
-    Plotly.newPlot('bubble', bubbleChart, bubbleLayout)
+    Plotly.newPlot('bubble', bubbleChart, bubbleLayout);
 
     // End of block
     })
@@ -119,8 +149,8 @@ function charts(searchCity) {
 
 
 // Updating plot
-function optionChanged(id) {
-    charts(id)
+function optionChanged(city) {
+    charts(city);
 };
 
 
