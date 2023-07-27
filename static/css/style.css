@@ -1,26 +1,24 @@
 body {
     padding: 0;
     margin: 0;
-}
-  
-#map,
-body,
-html {
-    height: 500px;
-    width: 1000px;
+  }
+
+.sidebar-heading { 
+    padding: 1rem; 
+    margin-top: 1rem; 
+    background-color: #eee; 
+    color: #7d7a7a; 
 }
 
-.center-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.sidebar .nav-link { 
+    font-weight: 300; 
+    color: #333; 
+    position: relative; 
+    display: block; 
+    padding: .5em 1em; 
+    text-decoration: none;
 }
 
-#myVideo {
-  position: fixed;
-  right: 0;
-  /* bottom: 0; */
-  min-width: 100%;
-  min-height: 100%;
+#bar {
+    height: 150;
 }
