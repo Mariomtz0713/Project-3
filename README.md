@@ -10,7 +10,7 @@ Our complete data is not stored online and will need to run the following steps 
 - Open a terminal window, cd into the app.py file, and run the following command: python app.py
 - Everytime the page is launched this will need to be done.
 
-# Skills used to complete project
+## Skills used to complete project
 - Scrape, Extract, Transform, Load
 - Python
 - Pandas
@@ -18,7 +18,7 @@ Our complete data is not stored online and will need to run the following steps 
 - API Flask
 - HTML/CSS/Javascript
 
-# Project Parameters
+## Project Parameters
 - Data and Delivery
   - Data components used in the project are clearly documented.
   - The dataset contains at least 100 unique records. 
