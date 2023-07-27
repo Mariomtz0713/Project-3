@@ -136,9 +136,9 @@ function charts(searchCity) {
     let bubbleLayout = {
         height: 600,
         width: 950,
-        xaxis: {
-            title: 'Destinations'
-        }
+        title: 'Popularity',
+        xaxis: {title: 'Destinations'},
+        yaxis: {title: 'Flights available'}
     };
     Plotly.newPlot('bubble', bubbleChart, bubbleLayout);
 
