@@ -3,7 +3,7 @@ Mario Martinez | Diana Ibarra | Isaac Campos | Joe Montecinos
 
 - In this project we collected flight data leaving from the San Antonio International Airport and looked to analyze popluar destination routes as well as favorable airlines.
 
-Instructions to fully launch [WEBSITE](https://mariomtz0713.github.io/Project-3/)
+## Instructions to fully launch [WEBSITE](https://mariomtz0713.github.io/Project-3/)
 Our complete data is not stored online and will need to run the following steps to get all charts displayed properly.
 - Run the extract.ipynb file in Jupyter Notebook to pull and upload data into a mongodb database. (Note this only needs to be done once)
 - Make sure to have "flask_cors" installed in your terminal
