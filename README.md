@@ -12,7 +12,7 @@ Our complete data is not stored online and will need to run the following steps 
 
 Only then will the data generate (view example below).
 
-![Alt Text](Resources/screencapture-mariomtz0713-github-io-Project-3-2023-09-22-00_05_58.png)
+![Alt Text](Resources/website_capture.png)
 
 ## Skills Used
 - Scrape, Extract, Transform, Load
