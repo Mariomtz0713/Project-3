@@ -47,5 +47,5 @@ Only then will the data generate (view example below).
   - The presentation maintains audience interest.
 
 ## Resources
-Bootstrap 4 template - https://github.com/mazipan/bootstrap4-admin-dashboard-template
+Bootstrap 4 template - https://github.com/mazipan/bootstrap4-admin-dashboard-template <br>
 Travelpayouts API - https://travelpayouts.github.io/slate/
