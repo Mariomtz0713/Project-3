@@ -6,17 +6,22 @@ Mario Martinez | Diana Ibarra | Isaac Campos | Joe Montecinos
 ## Instructions to fully launch [WEBSITE](https://mariomtz0713.github.io/Project-3/)
 Our complete data is not stored online and will need to run the following steps to get all charts displayed properly.
 - Run the extract.ipynb file in Jupyter Notebook to pull and upload data into a mongodb database. (Note this only needs to be done once)
-- Make sure to have "flask_cors" installed in your terminal
+- Make sure to have "flask_cors" installed in your terminal.
 - Open a terminal window, cd into the app.py file, and run the following command: python app.py
 - Everytime the page is launched this will need to be done.
 
-## Skills used to complete project
+Only then will the data generate (view example below).
+
+![Alt Text](Resources/screencapture-mariomtz0713-github-io-Project-3-2023-09-22-00_05_58.png)
+
+## Skills Used
 - Scrape, Extract, Transform, Load
 - Python
 - Pandas
 - Pymongo
 - API Flask
-- HTML/CSS/Javascript
+- Javascript
+- HTML/CSS/Bootstrap
 
 ## Project Parameters
 - Data and Delivery
@@ -40,3 +45,6 @@ Our complete data is not stored online and will need to run the following steps 
   - Content, transitions, and conclusions flow smoothly within any time restrictions. 
   - The content is relevant to the project. 
   - The presentation maintains audience interest.
+
+## Resources
+Bootstrap 4 template - https://github.com/mazipan/bootstrap4-admin-dashboard-template
