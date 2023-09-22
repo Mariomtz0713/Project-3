@@ -1,7 +1,7 @@
 # Project-3
 Mario Martinez | Diana Ibarra | Isaac Campos | Joe Montecinos
 
-- In this project we collected flight data leaving from the San Antonio International Airport and looked to analyze popluar destination routes as well as favorable airlines.
+- In this project our team of 4 collected flight data leaving from the San Antonio International Airport. We analyzed popluar routes, visualized destinations, and discovered popular airlines.
 
 ## Instructions to fully launch [WEBSITE](https://mariomtz0713.github.io/Project-3/)
 Our complete data is not stored online and will need to run the following steps to get all charts displayed properly.
@@ -48,3 +48,4 @@ Only then will the data generate (view example below).
 
 ## Resources
 Bootstrap 4 template - https://github.com/mazipan/bootstrap4-admin-dashboard-template
+Travelpayouts API - https://travelpayouts.github.io/slate/
